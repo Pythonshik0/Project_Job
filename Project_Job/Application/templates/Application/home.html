@@ -1,0 +1,17 @@
+{% extends 'Application/main.html' %}
+{% load static %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+{% for product in products %}
+    <div style="text-align: center">
+    <h1 >{{ product.name }}</h1>
+    <a>Цена: ${{ product.price }}.00 </a>
+<p></p>
+    <a href="{{ product.get_absolute_url }}">
+            <button type="button" id="checkout-button">Перейти к товару</button>
+    </a>
+    </div>
+{% endfor %}
+{% endblock %}
